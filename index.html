@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Milk | طازة… بجودة تثق فيها</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFFBF5;
+      --cream-2: #F7F1E6;
+      --ink: #1F2933;
+      --muted: #5B6770;
+      --blue: #1B6FA8;
+      --blue-d: #134B72;
+      --gold: #E8A93B;
+      --green: #3E8E63;
+      --line: #E7DFD2;
+      --radius: 20px;
+      --shadow: 0 14px 40px rgba(27, 58, 80, .10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Cairo', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.9;
+      overflow-x: hidden
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      color: var(--blue);
+      background: #EAF3FA;
+      padding: 7px 16px;
+      border-radius: 100px;
+      margin-bottom: 18px
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 3.6vw, 2.7rem);
+      font-weight: 900;
+      line-height: 1.4;
+      letter-spacing: -.5px
+    }
+
+    .sec {
+      padding: 96px 0
+    }
+
+    .sec-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 56px
+    }
+
+    .sec-head p {
+      color: var(--muted);
+      margin-top: 14px;
+      font-size: 1.05rem
+    }
+
+    /* NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 251, 245, .92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+      font-size: 1.22rem
+    }
+
+    .logo .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-d));
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      box-shadow: 0 6px 16px rgba(27, 111, 168, .32)
+    }
+
+    .logo small {
+      display: block;
+      font-size: .66rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .3px
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      font-weight: 600;
+      font-size: .96rem
+    }
+
+    nav ul a {
+      color: var(--muted);
+      transition: .2s;
+      position: relative
+    }
+
+    nav ul a:hover {
+      color: var(--blue)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 26px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: .95rem;
+      transition: .25s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit
+    }
+
+    .btn-p {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(27, 111, 168, .28)
+    }
+
+    .btn-p:hover {
+      background: var(--blue-d);
+      transform: translateY(-2px)
+    }
+
+    .btn-w {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(37, 211, 102, .30)
+    }
+
+    .btn-w:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn-o {
+      background: #fff;
+      border: 1.6px solid var(--line);
+      color: var(--ink)
+    }
+
+    .btn-o:hover {
+      border-color: var(--blue);
+      color: var(--blue)
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.7rem;
+      color: var(--ink);
+      cursor: pointer
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 76px 0 84px;
+      background:
+        radial-gradient(circle at 88% 12%, #EAF3FA 0%, transparent 45%),
+        radial-gradient(circle at 6% 90%, #FBF0DC 0%, transparent 42%)
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.35;
+      letter-spacing: -1px
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--blue)
+    }
+
+    .hero .lead {
+      color: var(--muted);
+      font-size: 1.12rem;
+      margin: 22px 0 30px;
+      max-width: 540px
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .trust {
+      display: flex;
+      gap: 30px;
+      margin-top: 42px;
+      flex-wrap: wrap
+    }
+
+    .trust div {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--muted)
+    }
+
+    .trust span {
+      font-size: 1.25rem
+    }
+
+    .hero-visual {
+      position: relative
+    }
+
+    .hero-visual .main {
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/5
+    }
+
+    .hero-visual .main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .badge {
+      position: absolute;
+      background: #fff;
+      border-radius: 18px;
+      padding: 15px 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: .9rem
+    }
+
+    .badge .ic {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem
+    }
+
+    .badge-1 {
+      bottom: 26px;
+      right: -22px;
+      animation: fl 5s ease-in-out infinite
+    }
+
+    .badge-2 {
+      top: 34px;
+      left: -26px;
+      animation: fl 5s ease-in-out infinite .8s
+    }
+
+    .badge small {
+      display: block;
+      font-weight: 600;
+      font-size: .76rem;
+      color: var(--muted)
+    }
+
+    @keyframes fl {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-11px)
+      }
+    }
+
+    /* STRIP */
+    .strip {
+      background: var(--blue-d);
+      color: #fff;
+      padding: 26px 0
+    }
+
+    .strip .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      text-align: center
+    }
+
+    .strip div {
+      flex: 1;
+      min-width: 150px
+    }
+
+    .strip b {
+      display: block;
+      font-size: 1.55rem;
+      font-weight: 900
+    }
+
+    .strip small {
+      font-size: .83rem;
+      opacity: .85;
+      font-weight: 600
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center
+    }
+
+    .about-img {
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 5/4
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .about-txt h2 {
+      margin-bottom: 20px
+    }
+
+    .about-txt p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-size: 1.04rem
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 28px
+    }
+
+    .pillar {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 15px 17px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-weight: 700;
+      font-size: .92rem
+    }
+
+    .pillar span {
+      font-size: 1.35rem
+    }
+
+    /* PRODUCTS */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 44px
+    }
+
+    .tab {
+      padding: 11px 24px;
+      border-radius: 100px;
+      background: #fff;
+      border: 1.5px solid var(--line);
+      font-weight: 700;
+      font-size: .93rem;
+      cursor: pointer;
+      transition: .22s;
+      font-family: inherit;
+      color: var(--muted)
+    }
+
+    .tab.on {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+      box-shadow: 0 8px 20px rgba(27, 111, 168, .26)
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: .3s;
+      box-shadow: 0 4px 14px rgba(27, 58, 80, .04)
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: #D8E6F2
+    }
+
+    .card-img {
+      aspect-ratio: 16/11;
+      overflow: hidden;
+      background: var(--cream-2)
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .5s
+    }
+
+    .card:hover .card-img img {
+      transform: scale(1.07)
+    }
+
+    .card-b {
+      padding: 24px
+    }
+
+    .card-b h3 {
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 9px
+    }
+
+    .card-b p {
+      color: var(--muted);
+      font-size: .94rem
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 16px
+    }
+
+    .tag {
+      background: var(--cream-2);
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 100px
+    }
+
+    .tag.prod {
+      background: #EAF3FA;
+      color: var(--blue)
+    }
+
+    /* BUNDLES */
+    .bundles {
+      background: linear-gradient(180deg, var(--cream-2), var(--cream))
+    }
+
+    .bundle-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px
+    }
+
+    .bundle {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      border: 1px solid var(--line);
+      text-align: center;
+      transition: .3s;
+      position: relative;
+      overflow: hidden
+    }
+
+    .bundle:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow)
+    }
+
+    .bundle .em {
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+      display: block
+    }
+
+    .bundle h3 {
+      font-size: 1.12rem;
+      font-weight: 900;
+      margin-bottom: 10px
+    }
+
+    .bundle ul {
+      list-style: none;
+      text-align: right;
+      font-size: .9rem;
+      color: var(--muted);
+      margin-top: 14px
+    }
+
+    .bundle li {
+      padding: 5px 0;
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .bundle li:before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900
+    }
+
+    .bundle .ribbon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--gold);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 5px 40px;
+      transform: rotate(-45deg) translate(-30px, -4px)
+    }
+
+    /* B2B */
+    .b2b {
+      background: var(--blue-d);
+      color: #fff;
+      position: relative;
+      overflow: hidden
+    }
+
+    .b2b:before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 169, 59, .22), transparent 70%);
+      top: -180px;
+      left: -140px
+    }
+
+    .b2b .sec-head h2,
+    .b2b h2 {
+      color: #fff
+    }
+
+    .b2b .sec-head p {
+      color: rgba(255, 255, 255, .78)
+    }
+
+    .b2b-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      position: relative
+    }
+
+    .b2b-c {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 18px;
+      padding: 28px 24px;
+      transition: .3s
+    }
+
+    .b2b-c:hover {
+      background: rgba(255, 255, 255, .14);
+      transform: translateY(-5px)
+    }
+
+    .b2b-c .n {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      background: rgba(232, 169, 59, .2);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 16px
+    }
+
+    .b2b-c h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      margin-bottom: 8px
+    }
+
+    .b2b-c p {
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .75)
+    }
+
+    /* QR / SEGMENTS */
+    .seg-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px
+    }
+
+    .seg {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px 22px;
+      text-align: center;
+      transition: .3s
+    }
+
+    .seg:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow)
+    }
+
+    .seg .em {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      display: block
+    }
+
+    .seg h4 {
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 8px
+    }
+
+    .seg p {
+      font-size: .86rem;
+      color: var(--muted)
+    }
+
+    /* QUALITY */
+    .quality-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .steps {
+      list-style: none
+    }
+
+    .steps li {
+      display: flex;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px dashed var(--line)
+    }
+
+    .steps li:last-child {
+      border: none
+    }
+
+    .steps .num {
+      min-width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      background: #EAF3FA;
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1.05rem
+    }
+
+    .steps h4 {
+      font-weight: 800;
+      font-size: 1.02rem;
+      margin-bottom: 3px
+    }
+
+    .steps p {
+      font-size: .9rem;
+      color: var(--muted)
+    }
+
+    .q-img {
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/5
+    }
+
+    .q-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    /* CONTACT */
+    .contact {
+      background: linear-gradient(180deg, var(--cream), var(--cream-2))
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 56px
+    }
+
+    .contact-info div {
+      display: flex;
+      gap: 15px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: flex-start
+    }
+
+    .contact-info .ic {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      background: #fff;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      flex-shrink: 0
+    }
+
+    .contact-info b {
+      display: block;
+      font-size: .95rem
+    }
+
+    .contact-info span {
+      color: var(--muted);
+      font-size: .88rem;
+      direction: ltr;
+      display: inline-block
+    }
+
+    form {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: var(--shadow)
+    }
+
+    .field {
+      margin-bottom: 18px
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      font-size: .88rem;
+      margin-bottom: 7px
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--line);
+      border-radius: 13px;
+      font-family: inherit;
+      font-size: .95rem;
+      background: var(--cream);
+      transition: .2s;
+      color: var(--ink)
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: #fff
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 110px
+    }
+
+    .f2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      color: #fff;
+      padding: 64px 0 30px
+    }
+
+    .f-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 44px
+    }
+
+    footer h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 18px
+    }
+
+    footer p,
+    footer a {
+      color: rgba(255, 255, 255, .62);
+      font-size: .9rem;
+      display: block;
+      margin-bottom: 9px;
+      transition: .2s
+    }
+
+    footer a:hover {
+      color: #fff
+    }
+
+    .f-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 16px
+    }
+
+    .socials {
+      display: flex;
+      gap: 11px;
+      margin-top: 16px
+    }
+
+    .socials a {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .09);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      margin: 0;
+      color: #fff
+    }
+
+    .socials a:hover {
+      background: var(--blue)
+    }
+
+    .f-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      padding-top: 24px;
+      text-align: center;
+      color: rgba(255, 255, 255, .45);
+      font-size: .85rem
+    }
+
+    /* FLOAT WA */
+    .float-wa {
+      position: fixed;
+      bottom: 26px;
+      left: 26px;
+      z-index: 200;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      display: grid;
+      place-items: center;
+      font-size: 1.8rem;
+      box-shadow: 0 12px 30px rgba(37, 211, 102, .45);
+      transition: .3s;
+      color: #fff
+    }
+
+    .float-wa:hover {
+      transform: scale(1.1)
+    }
+
+    .rise {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: .7s cubic-bezier(.2, .7, .3, 1)
+    }
+
+    .rise.in {
+      opacity: 1;
+      transform: none
+    }
+
+    @media(max-width:980px) {
+
+      .hero-grid,
+      .about-grid,
+      .quality-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 44px
+      }
+
+      .hero-visual {
+        order: -1
+      }
+
+      .cards,
+      .b2b-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .bundle-grid,
+      .seg-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .f-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 74px;
+        right: 0;
+        left: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 6px;
+        border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow)
+      }
+
+      nav ul.open {
+        display: flex
+      }
+
+      nav ul a {
+        padding: 10px 0;
+        display: block
+      }
+
+      .menu-btn {
+        display: block
+      }
+
+      .badge-1 {
+        right: 10px
+      }
+
+      .badge-2 {
+        left: 10px
+      }
+    }
+
+    @media(max-width:560px) {
+
+      .cards,
+      .b2b-grid,
+      .bundle-grid,
+      .seg-grid,
+      .f-grid,
+      .f2,
+      .pillars {
+        grid-template-columns: 1fr
+      }
+
+      .sec {
+        padding: 64px 0
+      }
+
+      nav .btn {
+        display: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="logo">
+          <div class="mark">🥛</div>
+          <div> Milk <small>منتجات ألبان طازجة</small></div>
+        </div>
+        <ul id="nav">
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#products">منتجاتنا</a></li>
+          <li><a href="#bundles">الباكدجات</a></li>
+          <li><a href="#b2b">حلول B2B</a></li>
+          <li><a href="#quality">الجودة</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+        <div style="display:flex;align-items:center;gap:12px">
+          <a href="#contact" class="btn btn-p">اطلب الآن</a>
+          <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="rise">
+        <span class="eyebrow">جودة الألبان اللي تثق فيها</span>
+        <h1>طازة…<br><em>بجودة تثق فيها</em> 🥛</h1>
+        <p class="lead">كل احتياجاتك من الألبان ومشتقاتها… في مكان واحد. من احتياجات البيت اليومية إلى احتياجات المطاعم
+          والكافيهات والمخابز، نوفر لك منتجات ألبان يمكنك الاعتماد عليها.</p>
+        <div class="hero-cta">
+          <a href="#products" class="btn btn-p">تصفح منتجاتنا</a>
+          <a href="#b2b" class="btn btn-o">حلول التوريد للبزنس</a>
+        </div>
+        <div class="trust">
+          <div><span>🌿</span> طزاجة</div>
+          <div><span>⭐</span> جودة</div>
+          <div><span>🧼</span> نظافة</div>
+          <div><span>📦</span> تنوع</div>
+          <div><span>🤝</span> ثقة واستمرارية</div>
+        </div>
+      </div>
+      <div class="hero-visual rise">
+        <div class="main"><img src="https://sspark.genspark.ai/i/hkH1QC2ljXV0Z1EC?width=2560" alt="لبن طازج"></div>
+        <div class="badge badge-1">
+          <div class="ic" style="background:#EAF3FA">🧀</div>
+          <div>تنوع كامل<small>أكثر من 20 منتجاً</small></div>
+        </div>
+        <div class="badge badge-2">
+          <div class="ic" style="background:#FBF0DC">🚚</div>
+          <div>توريد منتظم<small>للبزنس والمنازل</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <section class="strip">
+    <div class="wrap row">
+      <div><b>🥛 100%</b><small>طازة يومياً</small></div>
+      <div><b>🧀 20+</b><small>منتج متنوع</small></div>
+      <div><b>🏪 B2B</b><small>أسعار جملة</small></div>
+      <div><b>📦 توصيل</b><small>حسب المنطقة</small></div>
+      <div><b>✓ ثابتة</b><small>جودة في كل طلب</small></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about">
+    <div class="wrap about-grid">
+      <div class="about-img rise"><img src="https://sspark.genspark.ai/i/qJpNiuCwX93Gbg19?width=2560" alt="مزرعة ألبان">
+      </div>
+      <div class="about-txt rise">
+        <span class="eyebrow">من نحن</span>
+        <h2>الجودة تبدأ من التفاصيل</h2>
+        <p>نقدم مجموعة متنوعة من منتجات الألبان المختارة بعناية، مع اهتمامنا بالجودة والطزاجة والنظافة في كل خطوة. نحرص
+          على أن تصل منتجاتنا إليك بالجودة والطزاجة التي تتوقعها.</p>
+        <p>من اختيار المواد الخام، مروراً بعمليات التصنيع والتعبئة، وحتى التخزين والتوصيل… نهتم بكل تفصيلة. لأننا نؤمن
+          أن: <b>الجودة ليست اختياراً… بل أساس عملنا.</b></p>
+        <div class="pillars">
+          <div class="pillar"><span>🌿</span> Freshness — طزاجة</div>
+          <div class="pillar"><span>⭐</span> Quality — جودة</div>
+          <div class="pillar"><span>🧼</span> Hygiene — نظافة</div>
+          <div class="pillar"><span>📦</span> Variety — تنوع</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="sec" id="products" style="background:var(--cream-2)">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <span class="eyebrow">منتجاتنا</span>
+        <h2>اختار احتياجاتك… ونحن نوفرها لك</h2>
+        <p>مجموعة غنية من منتجات الألبان الطازجة والأجبان والزبدة والكريمة — للاستخدام المنزلي والتجاري.</p>
+      </div>
+      <div class="tabs rise">
+        <button class="tab on" data-t="fresh">🥛 Fresh Dairy</button>
+        <button class="tab" data-t="cheese">🧀 Cheese</button>
+        <button class="tab" data-t="butter">🧈 Butter &amp; Cream</button>
+      </div>
+      <div class="cards" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- BUNDLES -->
+  <section class="sec bundles" id="bundles">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <span class="eyebrow">أهم فكرة تسويقية</span>
+        <h2>Product Bundles — باكدجات جاهزة</h2>
+        <p>بدل بيع كل منتج منفرداً… باكدجات مدروسة تناسب كل عميل، من البيت للمطعم.</p>
+      </div>
+      <div class="bundle-grid">
+        <div class="bundle rise"><span class="em">🥐</span>
+          <h3>Breakfast Box</h3>
+          <p style="font-size:.88rem;color:var(--muted)">ابدأ يومك كامل</p>
+          <ul>
+            <li>لبن</li>
+            <li>جبنة</li>
+            <li>زبادي</li>
+            <li>زبدة</li>
+          </ul>
+        </div>
+        <div class="bundle rise"><span class="em">👨‍👩‍👧‍👦</span>
+          <h3>Family Box</h3>
+          <p style="font-size:.88rem;color:var(--muted)">تكفي الأسرة أسبوعاً</p>
+          <ul>
+            <li>مجموعة منتجات</li>
+            <li>تكفي الأسرة</li>
+            <li>سعر موفّر</li>
+          </ul>
+        </div>
+        <div class="bundle rise">
+          <div class="ribbon">جديد</div><span class="em">🍕</span>
+          <h3>Pizza Box</h3>
+          <p style="font-size:.88rem;color:var(--muted)">للمطاعم أو البيت</p>
+          <ul>
+            <li>Mozzarella</li>
+            <li>Cheddar</li>
+            <li>Butter</li>
+            <li>Cream</li>
+          </ul>
+        </div>
+        <div class="bundle rise"><span class="em">☕</span>
+          <h3>Café Supply Package</h3>
+          <p style="font-size:.88rem;color:var(--muted)">مخصص للكافيهات</p>
+          <ul>
+            <li>Milk</li>
+            <li>Cream</li>
+            <li>Butter</li>
+            <li>Cheese</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B -->
+  <section class="sec b2b" id="b2b">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <span class="eyebrow" style="background:rgba(232,169,59,.18);color:var(--gold)">Dairy Business Supply</span>
+        <h2>كل احتياجاتك من منتجات الألبان في مورد واحد</h2>
+        <p>نوفر للمطاعم والكافيهات والمخابز والسوبر ماركت حلول توريد تناسب احتياجاتهم.</p>
+      </div>
+      <div class="b2b-grid">
+        <div class="b2b-c rise">
+          <div class="n">💰</div>
+          <h3>أسعار خاصة للكميات</h3>
+          <p>أسعار جملة تنافسية مع عروض للكميات الكبيرة.</p>
+        </div>
+        <div class="b2b-c rise">
+          <div class="n">🔁</div>
+          <h3>توريد منتظم</h3>
+          <p>جدول توريد ثابت يضمن استمرارية المخزون.</p>
+        </div>
+        <div class="b2b-c rise">
+          <div class="n">📦</div>
+          <h3>كميات حسب الاحتياج</h3>
+          <p>نحدد الكمية المناسبة لكل عميل واحتياجاته.</p>
+        </div>
+        <div class="b2b-c rise">
+          <div class="n">⭐</div>
+          <h3>جودة ثابتة</h3>
+          <p>نفس المعايير في كل طلب، في كل مرة.</p>
+        </div>
+        <div class="b2b-c rise">
+          <div class="n">🚚</div>
+          <h3>خدمة توصيل</h3>
+          <p>توصيل حسب المنطقة ومتابعة مستمرة لطلباتك.</p>
+        </div>
+        <div class="b2b-c rise">
+          <div class="n">🧾</div>
+          <h3>حسابات B2B</h3>
+          <p>نظام حسابات مريح للبيزنس والعملاء الدائمين.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGMENTS -->
+  <section class="sec" id="segments">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <span class="eyebrow">لكل بيت… ولكل بيزنس</span>
+        <h2>لمن نقدم خدماتنا؟</h2>
+      </div>
+      <div class="seg-grid">
+        <div class="seg rise"><span class="em">👨‍👩‍👧‍👦</span>
+          <h4>الأسر والأفراد</h4>
+          <p>أسرة تبحث عن منتجات يومية موثوقة.</p>
+        </div>
+        <div class="seg rise"><span class="em">☕</span>
+          <h4>الكافيهات</h4>
+          <p>Café يحتاج إلى توريد منتظم من اللبن والكريمة.</p>
+        </div>
+        <div class="seg rise"><span class="em">🍕</span>
+          <h4>المطاعم</h4>
+          <p>Restaurant يحتاج كميات ثابتة من الجبن والألبان.</p>
+        </div>
+        <div class="seg rise"><span class="em">🥐</span>
+          <h4>المخابز</h4>
+          <p>Bakery يحتاج إلى الزبدة والكريمة بجودة ثابتة.</p>
+        </div>
+        <div class="seg rise"><span class="em">🏪</span>
+          <h4>السوبر ماركت</h4>
+          <p>Supermarket يبحث عن مورد موثوق بنظام Wholesale.</p>
+        </div>
+        <div class="seg rise"><span class="em">🍰</span>
+          <h4>محلات الحلويات</h4>
+          <p>مصانع الحلويات ومحلات البيتزا والموزعين.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY -->
+  <section class="sec" id="quality" style="background:var(--cream-2)">
+    <div class="wrap quality-grid">
+      <div class="rise">
+        <span class="eyebrow">الجودة والطزاجة</span>
+        <h2 style="margin-bottom:14px">الجودة ليست اختياراً… بل أساس عملنا</h2>
+        <ul class="steps">
+          <li>
+            <div class="num">1</div>
+            <div>
+              <h4>اختيار المواد الخام</h4>
+              <p>نبدأ من أفضل المصادر لضمان أساس قوي للجودة.</p>
+            </div>
+          </li>
+          <li>
+            <div class="num">2</div>
+            <div>
+              <h4>التصنيع والتعبئة</h4>
+              <p>معايير نظافة صارمة في كل خطوة داخل خط الإنتاج.</p>
+            </div>
+          </li>
+          <li>
+            <div class="num">3</div>
+            <div>
+              <h4>التخزين الصحيح</h4>
+              <p>ظروف تخزين تحفظ الطزاجة حتى لحظة الطلب.</p>
+            </div>
+          </li>
+          <li>
+            <div class="num">4</div>
+            <div>
+              <h4>التوصيل</h4>
+              <p>نصل إليك بسلسلة تبريد تحافظ على الجودة والطزاجة.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="q-img rise"><img src="https://sspark.genspark.ai/i/xmVmAqfUj1aEWWVy?width=2560" alt="زبادي طازج">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info rise">
+        <span class="eyebrow">اطلب الآن</span>
+        <h2 style="margin-bottom:22px">جاهزون لتلبية احتياجاتك</h2>
+        <div>
+          <div class="ic">📞</div>
+          <div><b>اتصال هاتفي</b><span>[رقم الهاتف]</span></div>
+        </div>
+        <div>
+          <div class="ic">💬</div>
+          <div><b>واتساب</b><span>[رقم الواتساب]</span></div>
+        </div>
+        <div>
+          <div class="ic">📍</div>
+          <div><b>العنوان</b><span>[العنوان]</span></div>
+        </div>
+        <div>
+          <div class="ic">📱</div>
+          <div><b>إنستجرام</b><span>[الحساب]</span></div>
+        </div>
+        <div>
+          <div class="ic">📘</div>
+          <div><b>فيسبوك</b><span>[الحساب]</span></div>
+        </div>
+      </div>
+      <form onsubmit="event.preventDefault();alert('شكراً لك! تم استلام طلبك وسنتواصل معك قريباً.');">
+        <div class="f2">
+          <div class="field"><label>الاسم</label><input type="text" placeholder="اسمك الكريم" required></div>
+          <div class="field"><label>رقم الهاتف</label><input type="tel" placeholder="01xxxxxxxxx" required></div>
+        </div>
+        <div class="field"><label>نوع العميل</label>
+          <select>
+            <option>أسرة / فرد</option>
+            <option>مطعم</option>
+            <option>كافيه</option>
+            <option>مخبز</option>
+            <option>سوبر ماركت</option>
+            <option>موزع / تاجر</option>
+          </select>
+        </div>
+        <div class="field"><label>المنتجات المطلوبة</label>
+          <select>
+            <option>Fresh Dairy (لبن / زبادي / قشطة)</option>
+            <option>Cheese (جبن بأنواعه)</option>
+            <option>Butter &amp; Cream</option>
+            <option>باكدج جاهز (Breakfast / Family / Pizza / Café)</option>
+            <option>توريد B2B بالكميات</option>
+          </select>
+        </div>
+        <div class="field"><label>ملاحظات / تفاصيل الطلب</label><textarea
+            placeholder="اكتب احتياجك بالتفصيل…"></textarea></div>
+        <button type="submit" class="btn btn-p" style="width:100%;justify-content:center">إرسال الطلب</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="f-grid">
+        <div>
+          <div class="f-logo">
+            <div class="mark" style="width:38px;height:38px;font-size:1.15rem">🥛</div> Milk
+          </div>
+          <p>طازة… بجودة تثق فيها. نبني علاقة طويلة المدى مع عملائنا من خلال Quality × Freshness × Trust.</p>
+          <div class="socials">
+            <a href="#" title="واتساب">💬</a><a href="#" title="إنستجرام">📱</a>
+            <a href="#" title="فيسبوك">📘</a><a href="#" title="اتصال">📞</a>
+          </div>
+        </div>
+        <div>
+          <h4>منتجاتنا</h4>
+          <a href="#products">🥛 Milk</a><a href="#products">🧀 Cheese</a>
+          <a href="#products">🥣 Yogurt</a><a href="#products">🧈 Butter</a><a href="#products">🥛 Cream</a>
+        </div>
+        <div>
+          <h4>روابط سريعة</h4>
+          <a href="#about">من نحن</a><a href="#bundles">الباكدجات</a>
+          <a href="#b2b">حلول B2B</a><a href="#quality">الجودة والطزاجة</a>
+        </div>
+        <div>
+          <h4>تواصل معنا</h4>
+          <p>📞 [رقم الهاتف]</p>
+          <p>💬 WhatsApp: [رقم الواتساب]</p>
+          <p>📍 [العنوان]</p>
+        </div>
+      </div>
+      <div class="f-bottom">© 2026 Milk — جميع الحقوق محفوظة. | طازة… بجودة تثق فيها.</div>
+    </div>
+  </footer>
+
+  <a href="#contact" class="float-wa" title="تواصل عبر واتساب">💬</a>
+
+  <script>
+    const DATA = {
+      fresh: [
+        { t: "لبن طازج", e: "🥛", d: "لبن كامل الدسم أو قليل الدسم حسب الإنتاج.", img: "https://sspark.genspark.ai/i/BQkawUejU2t9BrHx?width=2560", tags: ["كامل الدسم", "قليل الدسم", "طازج"] },
+        { t: "زبادي", e: "🥣", d: "زبادي طبيعي بطعم أصيل وقوام متماسك.", img: "https://sspark.genspark.ai/i/xmVmAqfUj1aEWWVy?width=2560", tags: ["طبيعي", "طازج"] },
+        { t: "قشطة ورايب", e: "🍶", d: "قشطة غنية ورايب بلدي بطعم أصيل.", img: "https://sspark.genspark.ai/i/hxcFTYnNaxfEa4WA?width=2560", tags: ["قشطة", "رايب", "بلدي"] }
+      ],
+      cheese: [
+        { t: "جبن بيضاء وفيتا", e: "🧀", d: "جبنة بيضاء وفيتا بجودة ثابتة.", img: "https://sspark.genspark.ai/i/c3zjcdOd67B4ImlB?width=2560", tags: ["بيضاء", "فيتا", "قريش"] },
+        { t: "شيدر وموزاريلا", e: "🍕", d: "شيدر وموزاريلا مثالية للبيتزا والمخبوزات.", img: "https://sspark.genspark.ai/i/yQ9V2WM5duMYPex6?width=2560", tags: ["شيدر", "موزاريلا", "بيتزا"] },
+        { t: "رومي ومتنوع", e: "🧆", d: "رومي ومجموعة متنوعة من الأجبان حسب السوق.", img: "https://sspark.genspark.ai/i/MITv4fon3MtNfxjI?width=2560", tags: ["رومي", "مجموعة متنوعة"] }
+      ],
+      butter: [
+        { t: "زبدة وسمنة", e: "🧈", d: "زبدة طبيعية وسمنة بلدي بطعم غني.", img: "https://sspark.genspark.ai/i/R7JRdNHLWsAQzAHZ?width=2560", tags: ["زبدة", "سمنة", "بلدي"] },
+        { t: "كريمة", e: "🥛", d: "كريمة طبخ وخفق مناسبة لكل الاستخدامات.", img: "https://sspark.genspark.ai/i/9N4Dollh4cERPvmP?width=2560", tags: ["كريمة طبخ", "خفق"] },
+        { t: "Cream Cheese", e: "🍰", d: "كريم تشيز ومنتجات مخصصة للمطاعم والمخابز.", img: "https://sspark.genspark.ai/i/b9V6dkOJSb3iNsfC?width=2560", tags: ["Cream Cheese", "للحلويات"] }
+      ]
+    };
+    function render(k) {
+      document.getElementById('grid').innerHTML = DATA[k].map(c => `
+   <div class="card">
+     <div class="card-img"><img src="${c.img}" alt="${c.t}"></div>
+     <div class="card-b">
+       <h3><span>${c.e}</span>${c.t}</h3>
+       <p>${c.d}</p>
+       <div class="tags">${c.tags.map(t => `<span class="tag prod">${t}</span>`).join('')}</div>
+     </div>
+   </div>`).join('');
+    }
+    render('fresh');
+    document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
+      document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
+      b.classList.add('on'); render(b.dataset.t);
+    });
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: .12 });
+    document.querySelectorAll('.rise').forEach(el => io.observe(el));
+    document.querySelectorAll('#nav a').forEach(a => a.onclick = () => document.getElementById('nav').classList.remove('open'));
+  </script>
+  <script type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+    integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
+    data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}'
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
