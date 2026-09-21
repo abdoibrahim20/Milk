@@ -12,6 +12,7 @@ A modern, professional landing page designed for dairy product businesses and st
 ## 🛠️ Tech Stack
 - HTML5
 - CSS3 (Vanilla)
+- JavaScript
 
 ## 🚀 Getting Started & Deployment
 This project consists of static files and requires no complex server setup:
